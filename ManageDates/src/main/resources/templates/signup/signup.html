@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8"></meta>
+    <!-- Bootstrapの設定 -->
+    <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+    <!-- CSSの読込 -->
+    <link th:href="@{/css/home.css}" rel="stylesheet"></link>
+    <title>SignUp</title>
+</head>
+<body>
+	<div class="col-sm-5">
+		<div class="page-header">
+			<h1>新規日付登録画面</h1>
+		</div>
+		<!-- th:action タイムリーフの書き方　リクエストURL -->
+		<!-- th:object=${<ModdelAttributeのキー名>}  オブジェクト名を省略できる-->
+		<form method="post" th:action="@{/signup}" th:object="${signupForm}">
+			<table class="table">
+			<!-- 入力エリア -->
+				<tr>
+					<th class="active col-sm-3">日付ID</th>
+					<td>
+						<div class="form-group">
+						<!-- th:field  オブジェクトの中のフィールドを取得。コントローラークラスに値を渡すこともできる-->
+							<input type="text" class="form-control" th:field="*{dateId}"/>
+						</div>
+					</td>
+				</tr>
+				
+				<tr>
+					<th class="active col-sm-3">日付名</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control"th:field="*{dateName}"/>
+						</div>
+					</td>
+				</tr>
+				
+				<tr>
+					<th class="active col-sm-3">加減値（年）</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" th:field="*{calcYear}"/>
+						</div>
+					</td>
+				</tr>
+				
+				<tr>
+					<th class="active col-sm-3">加減値（月）</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" th:field="*{calcMonth}"/>
+						</div>
+					</td>
+				</tr>
+				
+				<tr>
+					<th class="active col-sm-3">加減値（日）</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" th:field="*{calcDay}"/>
+						</div>
+					</td>
+				</tr>	
+			</table>
+			<button class="btn　btn-primary" type="submit">登録</button>
+			<button class="btn btn-return" type="submit">戻る</button>
+		</form>
+	</div>
+</body>
+
+</html>
