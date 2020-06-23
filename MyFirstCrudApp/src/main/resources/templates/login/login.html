@@ -11,10 +11,10 @@
     <title>Login</title>
 </head>
 <body class="text-center">
-    <h1>Login</h1>
+    <h1>ログイン</h1>
     <form method="post" action="/login">
         <!-- ユーザーID -->
-        <label>ユーザーID</label>
+        <label>寺院ID</label>
         <input type="text" /><br/>
         <br />
         <!-- パスワード -->
@@ -26,6 +26,7 @@
     </form>
     <br />
     <!-- ユーザー登録画面へのリンク -->
-    <a th:href="@{'/signup'}">ユーザー新規登録はこちら</a>
+    <a th:href="@{'/signup_temple'}">寺院新規登録はこちら</a>
+    <a th:href="@{'/signup_monk'}">僧侶新規登録はこちら</a>
 </body>
 </html>
